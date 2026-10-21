@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="1200" height="360" role="img" aria-labelledby="t d">
+  <title id="t">VM Clipboard Typer flow</title>
+  <desc id="d">Host clipboard, F13 hotkey, per-character mapping, keystrokes sent at 250 milliseconds per character, VM console.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#e8b04a"/></marker>
+  </defs>
+  <style>
+    text{font-family:"Segoe UI",Arial,sans-serif;fill:#e8edf2}
+    .box{fill:#161d27;stroke:#33414f;stroke-width:2}
+    .hot{stroke:#e8b04a}
+    .h{font-size:20px;font-weight:700}
+    .s{font-size:15px;fill:#9fb0bf}
+    .m{font-family:Consolas,"Courier New",monospace;font-size:15px;fill:#e8b04a}
+    .ln{stroke:#e8b04a;stroke-width:3;fill:none}
+  </style>
+  <rect width="1200" height="360" fill="#0d1218"/>
+  <text x="40" y="48" class="h" style="font-size:24px">VM Clipboard Typer: how a paste becomes keystrokes</text>
+  <g>
+    <rect class="box" x="40" y="100" width="190" height="150" rx="12"/>
+    <text x="135" y="145" text-anchor="middle" class="h">Host clipboard</text>
+    <text x="135" y="175" text-anchor="middle" class="s">Text you copied</text>
+    <text x="135" y="197" text-anchor="middle" class="s">on the host (Ctrl+C)</text>
+    <rect class="box hot" x="270" y="100" width="190" height="150" rx="12"/>
+    <text x="365" y="145" text-anchor="middle" class="h">F13 hotkey</text>
+    <text x="365" y="175" text-anchor="middle" class="s">Starts typing into the</text>
+    <text x="365" y="197" text-anchor="middle" class="s">focused window</text>
+    <rect class="box" x="500" y="100" width="210" height="150" rx="12"/>
+    <text x="605" y="145" text-anchor="middle" class="h">Per-character map</text>
+    <text x="605" y="175" text-anchor="middle" class="m">!  to  +1</text>
+    <text x="605" y="197" text-anchor="middle" class="m">|  to  +\</text>
+    <text x="605" y="219" text-anchor="middle" class="s">LF to Enter, CR skipped</text>
+    <rect class="box" x="750" y="100" width="190" height="150" rx="12"/>
+    <text x="845" y="145" text-anchor="middle" class="h">Keystrokes</text>
+    <text x="845" y="175" text-anchor="middle" class="s">SendEvent, one at a time</text>
+    <text x="845" y="197" text-anchor="middle" class="m">250 ms / character</text>
+    <text x="845" y="219" text-anchor="middle" class="m">100 ms key delay</text>
+    <rect class="box" x="980" y="100" width="180" height="150" rx="12"/>
+    <text x="1070" y="145" text-anchor="middle" class="h">VM console</text>
+    <text x="1070" y="175" text-anchor="middle" class="s">VMware window</text>
+    <text x="1070" y="197" text-anchor="middle" class="s">receives the text</text>
+  </g>
+  <path class="ln" d="M230 175H266" marker-end="url(#a)"/>
+  <path class="ln" d="M460 175H496" marker-end="url(#a)"/>
+  <path class="ln" d="M710 175H746" marker-end="url(#a)"/>
+  <path class="ln" d="M940 175H976" marker-end="url(#a)"/>
+  <rect x="40" y="290" width="1120" height="42" rx="8" fill="#161d27" stroke="#33414f"/>
+  <text x="600" y="316" text-anchor="middle" class="s" style="fill:#e8edf2">Esc stops typing (and still reaches the VM)   |   Ctrl+Alt+Esc exits the script</text>
+</svg>

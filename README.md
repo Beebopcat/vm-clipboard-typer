@@ -76,4 +76,4 @@ In this table `+` means Shift. Letters, digits, `-` and `'` are sent as they are
 
 ## License
 
-Personal utility, shared as-is.
+Copyright (c) 2026 Casey Shingledecker. All rights reserved. Source-available for viewing and for personal, non-commercial running only; this is not open source. See [LICENSE](LICENSE). Other people's material keeps its own license.

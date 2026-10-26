@@ -2,6 +2,32 @@
 
 *Types your clipboard into VMware consoles that don't accept paste, one exact keystroke at a time.*
 
+### Why it matters
+
+Small, practical IT-lab automation: a Windows tool that removes a real source of typing errors when working in a VM console that blocks host paste. It shows careful input handling: explicit US-layout symbol mapping, normalised "smart" punctuation, line-ending handling and an immediate stop key.
+
+**Stack:** AutoHotkey v2 (`SendEvent` keystrokes), a single script file.
+
+### Proof
+
+- **Syntax check:** the script passes AutoHotkey 2.0.26's `/Validate` check on Windows 11. There is **no automated test suite**, so there is no test count to report.
+- **Demo:** the animation below is a simulation of the typing cadence, not a recording of a VM. It was written for my own VMware lab work; I have not tested it against other hypervisors.
+- Flow diagram: `docs/flow.svg`.
+
+### Quick start
+
+1. Install [AutoHotkey v2](https://www.autohotkey.com/).
+2. Run `VM Clipboard Typer.ahk`.
+3. Copy text on the host, click into the VM console, press **F13**. Press **Esc** to stop.
+
+### Limitations
+
+- Assumes a US keyboard layout in the VM. F13 may need a remapped key (the hotkey is one line to change).
+- Deliberately slow (250 ms per character), so long text takes a while. Plain text only.
+- The text goes to whichever window has focus, so do not use it to type secrets into the wrong window.
+
+---
+
 ![How a paste becomes keystrokes](docs/flow.svg)
 
 ## What it is
